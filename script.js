@@ -1,4 +1,4 @@
-function GetComputerChoice() {
+function getComputerChoice() {
     const choice = Math.floor(Math.random() * 3) + 1;
         
     if (choice === 1) {
@@ -10,14 +10,37 @@ function GetComputerChoice() {
     }
 }
 
-console.log(GetComputerChoice());
+console.log(getComputerChoice());
 
-function GetPlayerChoice() {
-    const Playerinput = document.getElementById('vyber').value.toLowerCase();
-    if (Playerinput === "rock" || Playerinput === "paper" || Playerinput === "scissors") {
-        console.log("Player choice is valid", Playerinput);
+function getHumanChoice() {
+    const playerInput = prompt("type in either rock, paper or scissors").toLowerCase();
+    if (playerInput === "rock" || playerInput === "paper" || playerInput === "scissors") {
+        console.log("Player choice is valid:", playerInput);
+        return playerInput;
     } else {
-        console.log("Invalid choice. Please enter either rock, paper or scissors");
+        console.log("Invalid choice. Please enter either rock, paper, or scissors.");
+        return null;
     }
 }
 
+const humanChoice = getHumanChoice
+const computerChoice = getComputerChoice
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+        console.log("It's a draw. Please try again.");
+    } else if ((humanChoice === "rock" && computerChoice === "scissors") ||
+               (humanChoice === "paper" && computerChoice === "rock") ||
+               (humanChoice === "scissors" && computerChoice === "paper")) {
+        console.log("Congrats! You have won!");
+    } else {
+        console.log("You have lost :(");
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log(computerSelection)
+
+playRound(humanSelection, computerSelection);
