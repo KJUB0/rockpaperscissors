@@ -13,5 +13,11 @@ function GetComputerChoice() {
 console.log(GetComputerChoice());
 
 function GetPlayerChoice() {
-    choice = textField.addActionListener(this);
+    const Playerinput = document.getElementById('vyber').value.toLowerCase();
+    if (Playerinput === "rock" || Playerinput === "paper" || Playerinput === "scissors") {
+        console.log("Player choice is valid", Playerinput);
+    } else {
+        console.log("Invalid choice. Please enter either rock, paper or scissors");
+    }
 }
+

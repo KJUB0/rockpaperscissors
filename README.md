@@ -1,0 +1,1 @@
+Jednoduchy program vramci Top Ktory hra s pouzivatelom kamen, papier, noznice.
