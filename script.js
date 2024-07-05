@@ -11,3 +11,7 @@ function GetComputerChoice() {
 }
 
 console.log(GetComputerChoice());
+
+function GetPlayerChoice() {
+    choice = textField.addActionListener(this);
+}
